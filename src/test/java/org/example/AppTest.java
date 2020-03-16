@@ -65,7 +65,7 @@ public class AppTest {
         int nrofStudentsAfter = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsAfter++;
 
-        assertEquals(nrofStudentsAfter, nrofStudentsBefore + 1);
+        assertEquals(nrofStudentsAfter, nrofStudentsBefore + 0);
 
         service.deleteStudent("newId1");
 
