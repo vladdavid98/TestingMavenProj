@@ -54,8 +54,6 @@ public class AppTest {
 
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
 
-//        service.deleteStudent("newId1");
-
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
@@ -65,7 +63,7 @@ public class AppTest {
         int nrofStudentsAfter = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsAfter++;
 
-        assertEquals(nrofStudentsAfter, nrofStudentsBefore + 0);
+        assertEquals(nrofStudentsAfter, nrofStudentsBefore + 1);
 
         service.deleteStudent("newId1");
 
@@ -73,8 +71,6 @@ public class AppTest {
         for (Student stud : service.getAllStudenti()) nrofStudentsAfter++;
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
-
-
     }
 
     @Test
@@ -101,7 +97,7 @@ public class AppTest {
             service.addStudent(newStudent);
         }
         catch (ValidationException e){
-            assertEquals(e.getMessage(),"Id incorectt!");
+            assertEquals(e.getMessage(),"Id incorect!");
         }
 
 
