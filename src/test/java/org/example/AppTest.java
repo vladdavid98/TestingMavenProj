@@ -41,7 +41,7 @@ public class AppTest {
     }
 
     @Test
-    public void test_addStudent_valid() {
+    public void test_NoTC_1() {
 
         String filenameStudent = "fisiere/StudentiTest.xml";
         String filenameTema = "fisiere/TemeTest.xml";
@@ -57,7 +57,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("newId1", "newStudentName1", 930, "newemail1@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1","newName",930, "new@scs.ubbcluj.ro");
         service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
@@ -74,7 +74,7 @@ public class AppTest {
     }
 
     @Test
-    public void test_addStudent_invalid() {
+    public void test_NoTC_2() {
 
         String filenameStudent = "fisiere/StudentiTest.xml";
         String filenameTema = "fisiere/TemeTest.xml";
@@ -87,19 +87,11 @@ public class AppTest {
 
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
 
-//        service.deleteStudent("newId1");
-
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("", "newStudentName1", 930, "newemail1@scs.ubbcluj.ro");
-        try {
-            service.addStudent(newStudent);
-        }
-        catch (ValidationException e){
-            assertEquals(e.getMessage(),"Id incorect!");
-        }
-
+        Student newStudent = new Student("","newName",930, "new@scs.ubbcluj.ro");
+        service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsAfter++;
