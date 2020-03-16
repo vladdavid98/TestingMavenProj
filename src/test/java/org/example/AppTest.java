@@ -101,7 +101,7 @@ public class AppTest {
             service.addStudent(newStudent);
         }
         catch (ValidationException e){
-            assertEquals(e.getMessage(),"Id incorect!");
+            assertEquals(e.getMessage(),"Id incorectt!");
         }
 
 
