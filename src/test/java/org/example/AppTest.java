@@ -41,7 +41,7 @@ public class AppTest {
     }
 
     @Test
-    public void testValid() {
+    public void test_addStudent_valid() {
 
         String filenameStudent = "fisiere/StudentiTest.xml";
         String filenameTema = "fisiere/TemeTest.xml";
@@ -78,7 +78,7 @@ public class AppTest {
     }
 
     @Test
-    public void testInvalid() {
+    public void test_addStudent_invalid() {
 
         String filenameStudent = "fisiere/StudentiTest.xml";
         String filenameTema = "fisiere/TemeTest.xml";
