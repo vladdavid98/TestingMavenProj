@@ -18,7 +18,7 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class AppTest {
+public class AppTestBBT {
     StudentValidator studentValidator = new StudentValidator();
     TemaValidator temaValidator = new TemaValidator();
 
@@ -137,6 +137,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_5() {
 
@@ -145,7 +146,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("","newName",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("", "newName", 930, "new@scs.ubbcluj.ro");
         try {
             service.addStudent(newStudent);
         } catch (Exception e) {
@@ -155,6 +156,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_6() {
 
@@ -163,7 +165,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student(" ","newName",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student(" ", "newName", 930, "new@scs.ubbcluj.ro");
         try {
             service.addStudent(newStudent);
         } catch (Exception e) {
@@ -175,6 +177,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_7() {
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
@@ -182,7 +185,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("abc","newName",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("abc", "newName", 930, "new@scs.ubbcluj.ro");
         service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
@@ -197,6 +200,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_8() {
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
@@ -204,7 +208,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("123","newName",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("123", "newName", 930, "new@scs.ubbcluj.ro");
         service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
@@ -219,6 +223,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_9() {
 
@@ -227,7 +232,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1","",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", "", 930, "new@scs.ubbcluj.ro");
         try {
             service.addStudent(newStudent);
         } catch (Exception e) {
@@ -239,6 +244,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_10() {
 
@@ -247,7 +253,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1"," ",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", " ", 930, "new@scs.ubbcluj.ro");
         try {
             service.addStudent(newStudent);
         } catch (Exception e) {
@@ -259,6 +265,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_11() {
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
@@ -266,7 +273,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1","abc",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", "abc", 930, "new@scs.ubbcluj.ro");
         service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
@@ -281,6 +288,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_12() {
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
@@ -288,7 +296,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1","123",930, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", "123", 930, "new@scs.ubbcluj.ro");
         service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
@@ -303,6 +311,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_13() {
 
@@ -311,7 +320,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1","newName",-1, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", "newName", -1, "new@scs.ubbcluj.ro");
         try {
             service.addStudent(newStudent);
         } catch (Exception e) {
@@ -323,6 +332,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_14() {
 
@@ -331,7 +341,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1","newName",0, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", "newName", 0, "new@scs.ubbcluj.ro");
         try {
             service.addStudent(newStudent);
         } catch (Exception e) {
@@ -343,6 +353,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_15() {
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
@@ -350,7 +361,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1","newName",1, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", "newName", 1, "new@scs.ubbcluj.ro");
         service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
@@ -365,6 +376,7 @@ public class AppTest {
 
         assertEquals(nrofStudentsAfter, nrofStudentsBefore);
     }
+
     @Test
     public void test_NoTC_16() {
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
@@ -372,7 +384,7 @@ public class AppTest {
         int nrofStudentsBefore = 0;
         for (Student stud : service.getAllStudenti()) nrofStudentsBefore++;
 
-        Student newStudent = new Student("id1","newName",999999999, "new@scs.ubbcluj.ro");
+        Student newStudent = new Student("id1", "newName", 999999999, "new@scs.ubbcluj.ro");
         service.addStudent(newStudent);
 
         int nrofStudentsAfter = 0;
