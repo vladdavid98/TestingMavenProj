@@ -50,11 +50,76 @@ public class AppTestWBT {
     @Test
     public void test_WBT_NoTC_1() {
         Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
+        int nrOfAssignmentsBefore = 0;
+        for (Tema tema : service.getAllTeme()) nrOfAssignmentsBefore++;
+        try{
+            Tema newAssignment = new Tema("", "temaDesc", 6, 5);
+
+            service.addTema(newAssignment);
+        }
+        catch (ValidationException e){
+        }
+        int nrofAssignmentsAfter = 0;
+        for (Tema tema : service.getAllTeme()) nrofAssignmentsAfter++;
+        assertEquals(nrofAssignmentsAfter, nrOfAssignmentsBefore);
+    }
+
+    @Test
+    public void test_WBT_NoTC_2() {
+        Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
+        int nrOfAssignmentsBefore = 0;
+        for (Tema tema : service.getAllTeme()) nrOfAssignmentsBefore++;
+        try{
+            Tema newAssignment = new Tema("id2", "", 6, 5);
+            service.addTema(newAssignment);
+        }
+        catch (ValidationException e){
+        }
+        int nrofAssignmentsAfter = 0;
+        for (Tema tema : service.getAllTeme()) nrofAssignmentsAfter++;
+        assertEquals(nrofAssignmentsAfter, nrOfAssignmentsBefore);
+    }
+
+    @Test
+    public void test_WBT_NoTC_3() {
+        Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
+        int nrOfAssignmentsBefore = 0;
+        for (Tema tema : service.getAllTeme()) nrOfAssignmentsBefore++;
+        try{
+            Tema newAssignment = new Tema("id3", "temaDesc", 20, 5);
+            service.addTema(newAssignment);
+        }
+        catch (ValidationException e){
+        }
+        int nrofAssignmentsAfter = 0;
+        for (Tema tema : service.getAllTeme()) nrofAssignmentsAfter++;
+        assertEquals(nrofAssignmentsAfter, nrOfAssignmentsBefore);
+    }
+
+    @Test
+    public void test_WBT_NoTC_4() {
+        Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
+        int nrOfAssignmentsBefore = 0;
+        for (Tema tema : service.getAllTeme()) nrOfAssignmentsBefore++;
+        try{
+            Tema newAssignment = new Tema("id4", "temaDesc", 6, 20);
+            service.addTema(newAssignment);
+        }
+        catch (ValidationException e){
+        }
+        int nrofAssignmentsAfter = 0;
+        for (Tema tema : service.getAllTeme()) nrofAssignmentsAfter++;
+        assertEquals(nrofAssignmentsAfter, nrOfAssignmentsBefore);
+    }
+
+    @Test
+    public void test_WBT_NoTC_5() {
+        Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
 
         int nrOfAssignmentsBefore = 0;
         for (Tema tema : service.getAllTeme()) nrOfAssignmentsBefore++;
 
-        Tema newAssignment = new Tema("id1", "temaDesc", 6, 5);
+        Tema newAssignment = new Tema("id5", "temaDesc", 6, 5);
         service.addTema(newAssignment);
 
         int nrofAssignmentsAfter = 0;
@@ -62,34 +127,12 @@ public class AppTestWBT {
 
         assertEquals(nrofAssignmentsAfter, nrOfAssignmentsBefore + 1);
 
-        service.deleteTema("id1");
+        service.deleteTema("id5");
 
         nrofAssignmentsAfter = 0;
         for (Tema tema : service.getAllTeme()) nrofAssignmentsAfter++;
 
         assertEquals(nrofAssignmentsAfter, nrOfAssignmentsBefore);
-    }
-
-    @Test
-    public void test_WBT_NoTC_2() {
-        Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
-
-        int nrOfAssignmentsBefore = 0;
-        for (Tema tema : service.getAllTeme()) nrOfAssignmentsBefore++;
-
-        try{
-            Tema newAssignment = new Tema("id2", "temaDesc", 6, 20);
-            service.addTema(newAssignment);
-        }
-        catch (ValidationException e){
-        }
-
-
-        int nrofAssignmentsAfter = 0;
-        for (Tema tema : service.getAllTeme()) nrofAssignmentsAfter++;
-
-        assertEquals(nrofAssignmentsAfter, nrOfAssignmentsBefore);
-
     }
 
 
